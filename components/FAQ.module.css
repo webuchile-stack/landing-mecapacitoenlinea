@@ -1,0 +1,118 @@
+.section {
+  background: var(--color-bg-secondary);
+}
+
+.list {
+  max-width: 780px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+}
+
+.item {
+  background: var(--gradient-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  transition: all var(--transition-base);
+}
+
+.item:hover {
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.open {
+  border-color: var(--color-border-accent);
+  box-shadow: 0 4px 20px rgba(255, 40, 106, 0.08);
+}
+
+.trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-4);
+  padding: var(--spacing-6) var(--spacing-8);
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: all var(--transition-fast);
+}
+
+.trigger:hover .question {
+  color: var(--color-text-primary);
+}
+
+.question {
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  line-height: 1.4;
+  transition: color var(--transition-fast);
+}
+
+.open .question {
+  color: var(--color-text-primary);
+}
+
+.icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-xl);
+  color: var(--color-text-secondary);
+  flex-shrink: 0;
+  transition: all var(--transition-base);
+  background: none;
+}
+
+.open .icon {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  background: var(--color-accent-light);
+  transform: scale(1.05);
+}
+
+.answer {
+  padding: 0 var(--spacing-8) var(--spacing-6);
+}
+
+.answerText {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--spacing-4);
+}
+
+/* Footer CTA */
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-4);
+  margin-top: var(--spacing-16);
+  padding-top: var(--spacing-12);
+  border-top: 1px solid var(--color-border);
+}
+
+.footerText {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-secondary);
+}
+
+@media (max-width: 768px) {
+  .trigger {
+    padding: var(--spacing-5) var(--spacing-5);
+  }
+
+  .answer {
+    padding: 0 var(--spacing-5) var(--spacing-5);
+  }
+}
