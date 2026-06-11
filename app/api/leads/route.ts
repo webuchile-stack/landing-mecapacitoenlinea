@@ -9,6 +9,13 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Email requerido' }, { status: 400 })
     }
 
+    if (!supabase) {
+      return NextResponse.json(
+        { error: 'Servicio no configurado. Contacta al administrador.' },
+        { status: 503 }
+      )
+    }
+
     const { error } = await supabase
       .from('leads')
       .insert([{ nombre: nombre || null, email }])
