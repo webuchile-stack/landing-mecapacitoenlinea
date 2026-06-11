@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import styles from './Footer.module.css'
 
 export default function Footer() {
@@ -10,15 +11,13 @@ export default function Footer() {
           {/* Brand */}
           <div className={styles.brand}>
             <div className={styles.logo}>
-              <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-                <circle cx="14" cy="14" r="14" fill="#ff286a" fillOpacity="0.15" />
-                <path d="M7 10.5L14 7L21 10.5V14C21 17.866 17.866 21 14 21C10.134 21 7 17.866 7 14V10.5Z" stroke="#ff286a" strokeWidth="1.5" fill="none"/>
-                <path d="M11 14L13 16L17 12" stroke="#ff286a" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-              <div>
-                <span className={styles.logoBrand}>mecapacito</span>
-                <span className={styles.logoSub}>en línea</span>
-              </div>
+              <Image
+                src="/logo.png"
+                alt="Me capacito en línea"
+                width={160}
+                height={40}
+                className={styles.logoImage}
+              />
             </div>
             <p className={styles.tagline}>
               Desarrollamos habilidades emocionales para transformar vidas. 

@@ -1,6 +1,6 @@
 .stats {
-  padding: var(--spacing-16) 0;
-  background: linear-gradient(to bottom, var(--color-bg-primary), var(--color-bg-secondary));
+  padding: var(--spacing-12) 0;
+  background: var(--color-bg-secondary);
   border-top: 1px solid var(--color-border);
   border-bottom: 1px solid var(--color-border);
 }
@@ -18,39 +18,33 @@
   text-align: center;
   gap: var(--spacing-2);
   padding: var(--spacing-8) var(--spacing-4);
-  background: var(--color-bg-glass);
+  background: #ffffff;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-xl);
   transition: all var(--transition-base);
   position: relative;
   overflow: hidden;
+  box-shadow: var(--shadow-card);
 }
 
 .statCard::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
+  top: 0; left: 0; right: 0;
+  height: 3px;
   background: var(--gradient-accent);
   transform: scaleX(0);
   transition: transform var(--transition-base);
 }
 
 .statCard:hover {
-  border-color: var(--color-border-accent);
   transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(255, 40, 106, 0.1);
+  box-shadow: 0 12px 40px rgba(124, 58, 237, 0.12);
+  border-color: var(--color-border-accent);
 }
+.statCard:hover::before { transform: scaleX(1); }
 
-.statCard:hover::before {
-  transform: scaleX(1);
-}
-
-.icon {
-  font-size: 2rem;
-}
+.icon { font-size: 2rem; }
 
 .value {
   font-size: var(--font-size-4xl);
@@ -68,14 +62,5 @@
   font-weight: 500;
 }
 
-@media (max-width: 768px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 480px) {
-  .grid {
-    grid-template-columns: 1fr;
-  }
-}
+@media (max-width: 768px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .grid { grid-template-columns: 1fr; } }

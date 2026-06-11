@@ -1,5 +1,5 @@
 .instructor {
-  background: linear-gradient(160deg, var(--color-bg-secondary) 0%, var(--color-bg-primary) 100%);
+  background: #ffffff;
   position: relative;
   overflow: hidden;
 }
@@ -11,7 +11,7 @@
   right: -10%;
   width: 500px;
   height: 100%;
-  background: radial-gradient(ellipse at right, rgba(255, 40, 106, 0.06) 0%, transparent 70%);
+  background: radial-gradient(ellipse at right, rgba(124, 58, 237, 0.04) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -22,7 +22,6 @@
   align-items: center;
 }
 
-/* Image Side */
 .imageWrapper {
   position: relative;
   display: flex;
@@ -35,19 +34,19 @@
   left: 50%;
   transform: translateX(-50%);
   width: 80%;
-  height: 120px;
-  background: radial-gradient(ellipse, rgba(255, 40, 106, 0.35) 0%, transparent 70%);
-  filter: blur(30px);
+  height: 80px;
+  background: radial-gradient(ellipse, rgba(214, 51, 132, 0.2) 0%, transparent 70%);
+  filter: blur(20px);
   border-radius: 50%;
   z-index: 0;
 }
 
 .imageBorder {
   position: absolute;
-  inset: -4px;
-  border-radius: calc(var(--radius-2xl) + 4px);
+  inset: -3px;
+  border-radius: calc(var(--radius-2xl) + 3px);
   background: var(--gradient-accent);
-  opacity: 0.3;
+  opacity: 0.25;
   z-index: 0;
   animation: pulse-glow 3s ease-in-out infinite;
 }
@@ -61,7 +60,7 @@
   object-fit: cover;
   object-position: top;
   border-radius: var(--radius-2xl);
-  filter: drop-shadow(0 20px 50px rgba(0, 0, 0, 0.5));
+  filter: drop-shadow(0 20px 40px rgba(124, 58, 237, 0.15));
 }
 
 .credCard {
@@ -73,30 +72,17 @@
   align-items: center;
   gap: var(--spacing-3);
   padding: var(--spacing-3) var(--spacing-5);
-  background: rgba(17, 17, 17, 0.9);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--color-border-accent);
   border-radius: var(--radius-xl);
   box-shadow: var(--shadow-accent);
 }
 
-.credIcon {
-  font-size: 1.5rem;
-}
+.credIcon { font-size: 1.5rem; }
+.credName { font-size: var(--font-size-sm); font-weight: 700; color: var(--color-text-primary); }
+.credTitle { font-size: var(--font-size-xs); color: var(--color-accent); }
 
-.credName {
-  font-size: var(--font-size-sm);
-  font-weight: 700;
-  color: var(--color-text-primary);
-}
-
-.credTitle {
-  font-size: var(--font-size-xs);
-  color: var(--color-accent);
-}
-
-/* Content Side */
 .content {
   display: flex;
   flex-direction: column;
@@ -107,6 +93,7 @@
   font-size: var(--font-size-4xl);
   font-weight: 700;
   line-height: 1.2;
+  color: var(--color-text-primary);
 }
 
 .bio {
@@ -115,7 +102,6 @@
   line-height: 1.8;
 }
 
-/* Achievements */
 .achievements {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -128,7 +114,7 @@
   align-items: center;
   gap: var(--spacing-3);
   padding: var(--spacing-3) var(--spacing-4);
-  background: var(--color-bg-glass);
+  background: var(--color-bg-secondary);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   font-size: var(--font-size-sm);
@@ -140,14 +126,11 @@
 .achievement:hover {
   border-color: var(--color-border-accent);
   color: var(--color-text-primary);
+  background: var(--color-accent-light);
 }
 
-.achieveIcon {
-  font-size: 1.25rem;
-  flex-shrink: 0;
-}
+.achieveIcon { font-size: 1.25rem; flex-shrink: 0; }
 
-/* Contact */
 .contact {
   display: flex;
   flex-direction: column;
@@ -156,57 +139,17 @@
   border-top: 1px solid var(--color-border);
 }
 
-.contactLabel {
-  font-size: var(--font-size-sm);
-  color: var(--color-text-muted);
-}
-
-.contactBtn {
-  align-self: flex-start;
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-2);
-}
+.contactLabel { font-size: var(--font-size-sm); color: var(--color-text-muted); }
+.contactBtn { align-self: flex-start; display: flex; align-items: center; gap: var(--spacing-2); }
 
 @media (max-width: 900px) {
-  .inner {
-    grid-template-columns: 1fr;
-    gap: var(--spacing-12);
-    text-align: center;
-  }
-
-  .imageWrapper {
-    order: -1;
-  }
-
-  .content {
-    align-items: center;
-  }
-
-  .achievements {
-    grid-template-columns: 1fr;
-    max-width: 380px;
-    width: 100%;
-  }
-
-  .achievement {
-    text-align: left;
-  }
-
-  .contact {
-    align-items: center;
-  }
-
-  .contactBtn {
-    align-self: center;
-  }
-
-  .credCard {
-    right: 20px;
-  }
-
-  .image {
-    max-width: 300px;
-    height: 360px;
-  }
+  .inner { grid-template-columns: 1fr; gap: var(--spacing-12); text-align: center; }
+  .imageWrapper { order: -1; }
+  .content { align-items: center; }
+  .achievements { grid-template-columns: 1fr; max-width: 380px; width: 100%; }
+  .achievement { text-align: left; }
+  .contact { align-items: center; }
+  .contactBtn { align-self: center; }
+  .credCard { right: 20px; }
+  .image { max-width: 300px; height: 360px; }
 }

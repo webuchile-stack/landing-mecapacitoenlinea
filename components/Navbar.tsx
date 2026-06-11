@@ -27,17 +27,14 @@ export default function Navbar() {
       <div className={`container ${styles.inner}`}>
         {/* Logo */}
         <a href="#inicio" className={styles.logo} aria-label="mecapacitoenlinea.cl inicio">
-          <span className={styles.logoMark}>
-            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-              <circle cx="14" cy="14" r="14" fill="#ff286a" fillOpacity="0.15" />
-              <path d="M7 10.5L14 7L21 10.5V14C21 17.866 17.866 21 14 21C10.134 21 7 17.866 7 14V10.5Z" stroke="#ff286a" strokeWidth="1.5" fill="none"/>
-              <path d="M11 14L13 16L17 12" stroke="#ff286a" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </span>
-          <span className={styles.logoText}>
-            <span className={styles.logoBrand}>mecapacito</span>
-            <span className={styles.logoSub}>en línea</span>
-          </span>
+          <Image
+            src="/logo.png"
+            alt="Me capacito en línea"
+            width={180}
+            height={44}
+            className={styles.logoImage}
+            priority
+          />
         </a>
 
         {/* Desktop Links */}
